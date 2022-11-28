@@ -68,7 +68,9 @@
                 $db->query('INSERT INTO "cars" ("model") VALUES ("Aventador")');
                 $db->query('INSERT INTO "cars" ("img-link") VALUES ("./img/aventador_svj.jpg")');
                 ?>
+                <input>
             </div>
+        
             <div class="row text-center">
                 <div class="col-md-3 col-lg-3 col-sm-6 listing">
                     <h3 class="model">2022 Bugatti Chiron</h3>
