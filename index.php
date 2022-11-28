@@ -24,6 +24,51 @@
     </div>
     <div class="full-container">
         <div class="items container">
+            <div class="row">
+                <?php
+
+                $db = new SQLite3('testing.sqlite', SQLITE3_OPEN_CREATE | SQLITE3_OPEN_READWRITE);
+                
+                // Create a table.
+                $db->query(
+                'CREATE TABLE IF NOT EXISTS "users" (
+                    "id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
+                    "name" VARCHAR,
+                    "password" VARCHAR,
+                    "info" VARCHAR
+                  )'
+                );
+                // Create a table.
+                $db->query(
+                    'CREATE TABLE IF NOT EXISTS "cars" (
+                        "id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
+                        "make" VARCHAR,
+                        "model" VARCHAR,
+                        "img-link" VARCHAR
+                        )'
+                    );
+                
+                // Insert some sample data to users table.
+                $db->query('INSERT INTO "users" ("name") VALUES ("Crazy Uncle Ben")');
+                $db->query('INSERT INTO "users" ("name") VALUES ("Walter W. Walter")');
+                $db->query('INSERT INTO "users" ("name") VALUES ("Flag")');
+                $db->query('INSERT INTO "users" ("info") VALUES ("CCCS{Flag-go-here}")');
+                
+                //Insert sample data to cars table.
+                $db->query('INSERT INTO "cars" ("make") VALUES ("Pontiac")');
+                $db->query('INSERT INTO "cars" ("model") VALUES ("Aztek")');
+                $db->query('INSERT INTO "cars" ("img-link") VALUES ("./img/aztek.jpg")');
+                $db->query('INSERT INTO "cars" ("make") VALUES ("Bugatti")');
+                $db->query('INSERT INTO "cars" ("model") VALUES ("Chiron")');
+                $db->query('INSERT INTO "cars" ("img-link") VALUES ("./img/chiron.jpg")');
+                $db->query('INSERT INTO "cars" ("make") VALUES ("Smart")');
+                $db->query('INSERT INTO "cars" ("model") VALUES ("ForTwo")');
+                $db->query('INSERT INTO "cars" ("img-link") VALUES ("./img/fortwo.jpg")');
+                $db->query('INSERT INTO "cars" ("make") VALUES ("Lamborghini")');
+                $db->query('INSERT INTO "cars" ("model") VALUES ("Aventador")');
+                $db->query('INSERT INTO "cars" ("img-link") VALUES ("./img/aventador_svj.jpg")');
+                ?>
+            </div>
             <div class="row text-center">
                 <div class="col-md-3 col-lg-3 col-sm-6 listing">
                     <h3 class="model">2022 Bugatti Chiron</h3>
@@ -32,7 +77,7 @@
                     <button>Add to Cart</button>CRAZY UNCLE BEN'S CRAZY CAR DEALERSHIP
 
                     <div class="reviews">
-                        <div>
+                        <div> 
                             <h6 class="user">Joey P.</h6>
                             <p class="rating">3 stars</p>
                             <p class="review">Handling is good, but it's a little bit on the slower side. Top speed is only like 270 mph :/. </p>
@@ -114,7 +159,7 @@
                     <h3 class="model">2017 Smart ForTwo</h3>
                     <img src="img/fortwo.jpg" class="car-img">
                     <h4>Price: <span class="price">$37,210</span></h4>
-                    <button onclick="alert('A Smart car? Really?')">Add to Cart</button>
+                    <button onclick="alert('Really?')">Add to Cart</button>
                     <div class="reviews">
                         <div>
                             <h6 class="user">Tyler K.</h6>
