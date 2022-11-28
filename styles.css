@@ -39,3 +39,23 @@ button{
     padding-right: 10px;
     user-select: none;
 }
+.login-link{
+    text-align: right;
+    float: right;
+    margin-right: 10px;
+    background-color: #696969;
+    color: white;
+    padding: 5px;
+    text-decoration: none;
+    border-radius: 5px;
+}
+    .login-link :hover{
+        background-color: #AAAAAA;
+        text-decoration: none;
+        color: black;
+    }
+    .login-link :visited{
+        background-color: #696969;
+        text-decoration: none;
+        color: black;
+    }
