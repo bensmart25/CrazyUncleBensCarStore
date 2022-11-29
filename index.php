@@ -18,16 +18,19 @@
 </head>
 <body>
     <div class="jumbotron text-center header">
-        <a class="login-link" href="./login.html">Login</a>
         <h1>CRAZY UNCLE BEN'S CRAZY CAR DEALERSHIP</h1>
         <h2>The <b>CRAZIEST</b> dealership with the <b>CRAZIEST</b> prices!</h2>
     </div>
     <div class="full-container">
         <div class="items container">
+            <div class="searchbar">
+                <h5>Search fo' a car!</h5>
+            </div>
+            <input id="search-box">
             <div class="row">
                 <?php
 
-                $db = new SQLite3('testing.sqlite', SQLITE3_OPEN_CREATE | SQLITE3_OPEN_READWRITE);
+                $db = new SQLite3('benscarstore.sqlite', SQLITE3_OPEN_CREATE | SQLITE3_OPEN_READWRITE);
                 
                 // Create a table.
                 $db->query(
@@ -68,7 +71,7 @@
                 $db->query('INSERT INTO "cars" ("model") VALUES ("Aventador")');
                 $db->query('INSERT INTO "cars" ("img-link") VALUES ("./img/aventador_svj.jpg")');
                 ?>
-                <input>
+                
             </div>
         
             <div class="row text-center">
@@ -76,7 +79,7 @@
                     <h3 class="model">2022 Bugatti Chiron</h3>
                     <img src="img/chiron.jpg" class="car-img">
                     <h4>Price: <span class="price">$8.50</span> </h4>
-                    <button>Add to Cart</button>CRAZY UNCLE BEN'S CRAZY CAR DEALERSHIP
+                    <button>Add to Cart</button>
 
                     <div class="reviews">
                         <div> 
