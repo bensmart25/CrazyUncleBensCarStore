@@ -5,6 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Crazy Uncle Ben's Car Store</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
 
@@ -13,7 +15,6 @@
 
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
     
     <link rel="stylesheet" href="styles.css">
 </head>
@@ -31,16 +32,15 @@
             </div>
 
             <div class="row">
-                
                 <script>
                     let query = $("#search-box").val();
                     console.log(query)
-                $("#search-button").click(() => {
-                    document.location.href = "/search.php?q=" + encodeURIComponent(query);
-                });
+                    $("#search-button").click(() => {
+                        document.location.href = "/search.php?q=" + encodeURIComponent(query);
+                    });
                 </script>
             </div>
-        <!--
+        
             <div class="row text-center">
                 <div class="col-md-3 col-lg-3 col-sm-6 listing">
                     <h3 class="model">2022 Bugatti Chiron</h3>
@@ -150,7 +150,7 @@
                     </div>
                 </div>
             </div>
-        -->
+        
         </div>
     </div>
 </body>
