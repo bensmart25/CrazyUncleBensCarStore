@@ -13,6 +13,7 @@
 
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
     
     <link rel="stylesheet" href="styles.css">
 </head>
@@ -25,55 +26,21 @@
         <div class="items container">
             <div class="searchbar">
                 <h5>Search fo' a car!</h5>
+                <input id="search-box">
+                <input type="submit" id="search-button" value="Search">
             </div>
-            <input id="search-box">
-            <div class="row">
-                <?php
 
-                $db = new SQLite3('benscarstore.sqlite', SQLITE3_OPEN_CREATE | SQLITE3_OPEN_READWRITE);
+            <div class="row">
                 
-                // Create a table.
-                $db->query(
-                'CREATE TABLE IF NOT EXISTS "users" (
-                    "id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
-                    "name" VARCHAR,
-                    "password" VARCHAR,
-                    "info" VARCHAR
-                  )'
-                );
-                // Create a table.
-                $db->query(
-                    'CREATE TABLE IF NOT EXISTS "cars" (
-                        "id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
-                        "make" VARCHAR,
-                        "model" VARCHAR,
-                        "img-link" VARCHAR
-                        )'
-                    );
-                
-                // Insert some sample data to users table.
-                $db->query('INSERT INTO "users" ("name") VALUES ("Crazy Uncle Ben")');
-                $db->query('INSERT INTO "users" ("name") VALUES ("Walter W. Walter")');
-                $db->query('INSERT INTO "users" ("name") VALUES ("Flag")');
-                $db->query('INSERT INTO "users" ("info") VALUES ("CCCS{Flag-go-here}")');
-                
-                //Insert sample data to cars table.
-                $db->query('INSERT INTO "cars" ("make") VALUES ("Pontiac")');
-                $db->query('INSERT INTO "cars" ("model") VALUES ("Aztek")');
-                $db->query('INSERT INTO "cars" ("img-link") VALUES ("./img/aztek.jpg")');
-                $db->query('INSERT INTO "cars" ("make") VALUES ("Bugatti")');
-                $db->query('INSERT INTO "cars" ("model") VALUES ("Chiron")');
-                $db->query('INSERT INTO "cars" ("img-link") VALUES ("./img/chiron.jpg")');
-                $db->query('INSERT INTO "cars" ("make") VALUES ("Smart")');
-                $db->query('INSERT INTO "cars" ("model") VALUES ("ForTwo")');
-                $db->query('INSERT INTO "cars" ("img-link") VALUES ("./img/fortwo.jpg")');
-                $db->query('INSERT INTO "cars" ("make") VALUES ("Lamborghini")');
-                $db->query('INSERT INTO "cars" ("model") VALUES ("Aventador")');
-                $db->query('INSERT INTO "cars" ("img-link") VALUES ("./img/aventador_svj.jpg")');
-                ?>
-                
+                <script>
+                    let query = $("#search-box").val();
+                    console.log(query)
+                $("#search-button").click(() => {
+                    document.location.href = "/search.php?q=" + encodeURIComponent(query);
+                });
+                </script>
             </div>
-        
+        <!--
             <div class="row text-center">
                 <div class="col-md-3 col-lg-3 col-sm-6 listing">
                     <h3 class="model">2022 Bugatti Chiron</h3>
@@ -111,7 +78,6 @@
                     <h4>Price: <span class="price">$5,200</span> </h4>
                     <button onclick="alert('Great choice')">Add to Cart</button>
 
-                    <!--Everyone either loves or hates the Aztek-->
                     <div class="reviews">
                         <div>
                             <h6 class="user">Walter W.</h6>
@@ -184,6 +150,7 @@
                     </div>
                 </div>
             </div>
+        -->
         </div>
     </div>
 </body>

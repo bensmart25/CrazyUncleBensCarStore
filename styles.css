@@ -6,6 +6,12 @@
     padding-bottom: 20vh;
     background-color: aquamarine;
 }
+#searchbar{
+    height: 2vh;
+    width: 10vh;
+    text-align: center;
+
+}
 .full-container{
     margin-top: 0;
     margin-bottom: 0;
@@ -50,13 +56,13 @@ button{
     text-decoration: none;
     border-radius: 5px;
 }
-    .login-link :hover{
-        background-color: #AAAAAA;
-        text-decoration: none;
-        color: black;
-    }
-    .login-link :visited{
-        background-color: #696969;
-        text-decoration: none;
-        color: black;
-    }
+.login-link :hover{
+    background-color: #AAAAAA;
+    text-decoration: none;
+    color: black;
+}
+.login-link :visited{
+    background-color: #696969;
+    text-decoration: none;
+    color: black;
+}
